@@ -1,0 +1,148 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>lucee.heroku</groupId>
+	<artifactId>lucee.heroku</artifactId>
+	<version>0.1.1</version>
+	<name>Lucee Heroku</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.lucee</groupId>
+			<artifactId>lucee</artifactId>
+			<version>4.5.0.042</version>
+		</dependency>
+
+	    <dependency>
+	      <groupId>org.lucee.lib</groupId>
+	      <artifactId>javax-servlet</artifactId>
+	      <version>1.4.1-01</version>
+	    </dependency>
+
+		<dependency>
+		    <groupId>org.tuckey</groupId>
+		    <artifactId>urlrewritefilter</artifactId>
+		    <version>4.0.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.25</version>
+		</dependency>
+
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.0-801.jdbc3</version>
+		</dependency>
+
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>cfmlprojects</id>
+			<url>http://cfmlprojects.org/artifacts</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.6.1</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>webroot/WEB-INF</directory>
+							<includes>
+								<include>**/*</include>
+							</includes>
+							<excludes>
+								<exclude>*.xml</exclude>
+								<exclude>**/lucee-server.xml</exclude>
+								<exclude>**/lucee-web.xml.cfm</exclude>
+								<exclude>lucee/library</exclude>
+								<exclude>lucee/customtags</exclude>
+							</excludes>
+							<followSymlinks>false</followSymlinks>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                    <version>2.9</version>
+                    <executions>
+                        <execution>
+                        	<id>copy-lucee-deps</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>copy-dependencies</goal>
+                            </goals>
+                            <configuration>
+                                <outputDirectory>webroot/WEB-INF/lib</outputDirectory>
+                            </configuration>
+                        </execution>
+
+						<execution>
+							<id>copy-libs</id>
+							<phase>package</phase>
+							<goals>
+								<goal>copy</goal>
+							</goals>
+							<configuration>
+								<artifactItems>
+									<artifactItem>
+										<groupId>net.sourceforge.winstone</groupId>
+										<artifactId>winstone</artifactId>
+										<version>0.9.10</version>
+										<type>jar</type>
+										<overWrite>false</overWrite>
+										<outputDirectory>${project.build.directory}</outputDirectory>
+										<destFileName>winstone.jar</destFileName>
+									</artifactItem>
+									<artifactItem>
+										<groupId>org.lucee.lib</groupId>
+										<artifactId>lucee-inst</artifactId>
+										<version>4.5.0.042</version>
+										<type>jar</type>
+										<overWrite>false</overWrite>
+										<outputDirectory>${project.build.directory}</outputDirectory>
+										<destFileName>lucee-inst.jar</destFileName>
+									</artifactItem>
+								</artifactItems>
+							</configuration>
+						</execution>
+                    </executions>
+            </plugin>
+
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<configuration>
+							<target>
+								<echo file="Procfile"
+									message="web: java $JAVA_OPTS -javaagent:target/lucee-inst.jar -jar target/winstone.jar --ajp13Port=-1 --httpPort=$PORT --directoryListings=false --simulateModUniqueId=true --webroot=webroot " />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
