@@ -1,6 +1,9 @@
 ##Lucee Application Template for Heroku
 Blank application template to deploy Lucee (CFML/Java) apps on Heroku
 
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+Demo: [https://lucee.herokuapp.com/](https://lucee.herokuapp.com/)
+
 ####Credits/Notes:
 This began as a fork of Chris Blackwell's [railo-heroku-template](https://github.com/d1rtym0nk3y/railo-heroku-template) project. Recently, after [converting my fork to Lucee](https://github.com/mikesprague/lucee-heroku-template), I decided it had diverged enough to become it's own project and moved it to this repo. 
 
