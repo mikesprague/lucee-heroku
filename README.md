@@ -2,6 +2,7 @@
 Blank application template to deploy Lucee (CFML/Java) apps on Heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 Demo: [https://lucee.herokuapp.com/](https://lucee.herokuapp.com/)
 
 ####Credits/Notes:
