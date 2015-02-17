@@ -21,7 +21,7 @@ $ cd lucee-heroku
 $ mvn package
 $ foreman start
 ```
-NOTE: On Windows, start foreman with the following command: 
+NOTE: On Windows, start foreman with the following command:
 ```bash
 $ foreman start -f Procfile.dev
 ```
@@ -29,10 +29,10 @@ $ foreman start -f Procfile.dev
 You should now have Lucee up and running at [http://localhost:5000](http://localhost:5000).
 Start adding your code to /webroot.
 
-By default, access to the Lucee server/web admins has remote access blocked. This can be 
+By default, access to the Lucee server/web admins has remote access blocked. This can be
 configured in /webroot/WEB-INF/urlrewrite.xml
 
-To deploy your site to Heroku you need to setup a free Heroku account, install the Heroku toolbelt (you can find their getting started guide [here](https://devcenter.heroku.com/articles/quickstart)). Then..
+To deploy your site to Heroku you need to setup a free Heroku account, install the Heroku toolbelt (Suggested reading: [Getting Started with Java on Heroku](https://devcenter.heroku.com/articles/getting-started-with-java)). Then..
 
 ```bash
 $ heroku apps:create [NAME]
