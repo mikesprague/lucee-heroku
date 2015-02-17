@@ -2,20 +2,21 @@ target
 .env
 .project
 Procfile*
+!Procfile.dev
 
 webroot/WEB-INF/*
 !webroot/WEB-INF/*.xml
 !webroot/WEB-INF/lib/
-!webroot/WEB-INF/railo/
+!webroot/WEB-INF/lucee/
 
 webroot/WEB-INF/lib/*
-!webroot/WEB-INF/lib/railo-server/
+!webroot/WEB-INF/lib/lucee-server/
 
-webroot/WEB-INF/lib/railo-server/*
-!webroot/WEB-INF/lib/railo-server/context/
+webroot/WEB-INF/lib/lucee-server/*
+!webroot/WEB-INF/lib/lucee-server/context/
 
-webroot/WEB-INF/lib/railo-server/context/*
-!webroot/WEB-INF/lib/railo-server/context/railo-server.xml
+webroot/WEB-INF/lib/lucee-server/context/*
+!webroot/WEB-INF/lib/lucee-server/context/lucee-server.xml
 
-webroot/WEB-INF/railo/*
-!webroot/WEB-INF/railo/railo-web.xml.cfm
+webroot/WEB-INF/lucee/*
+!webroot/WEB-INF/lucee/lucee-web.xml.cfm
