@@ -11,7 +11,7 @@
 		<dependency>
 			<groupId>org.lucee</groupId>
 			<artifactId>lucee</artifactId>
-			<version>4.5.0.042</version>
+			<version>4.5.1.000</version>
 		</dependency>
 
 	    <dependency>
@@ -71,6 +71,7 @@
 								<exclude>**/lucee-web.xml.cfm</exclude>
 								<exclude>lucee/library</exclude>
 								<exclude>lucee/customtags</exclude>
+								<exclude>lib/lucee-server/patches</exclude>
 							</excludes>
 							<followSymlinks>false</followSymlinks>
 						</fileset>
