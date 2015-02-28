@@ -1,3 +1,5 @@
+[![Dependency Status](https://www.versioneye.com/user/projects/54f1ca554f3108d1fa00065a/badge.svg?style=flat)](https://www.versioneye.com/user/projects/54f1ca554f3108d1fa00065a)
+
 ##Lucee Application Template for Heroku
 Blank application template to deploy Lucee (CFML/Java) apps on Heroku
 
