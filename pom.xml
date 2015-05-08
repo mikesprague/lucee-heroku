@@ -11,7 +11,7 @@
 		<dependency>
 			<groupId>org.lucee</groupId>
 			<artifactId>lucee</artifactId>
-			<version>4.5.1.008</version>
+			<version>4.5.1.011</version>
 		</dependency>
 
 		<dependency>
