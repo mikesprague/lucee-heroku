@@ -11,13 +11,13 @@
 		<dependency>
 			<groupId>org.lucee</groupId>
 			<artifactId>lucee</artifactId>
-			<version>4.5.1.011</version>
+			<version>4.5.1.015</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.lucee.lib</groupId>
 			<artifactId>javax-servlet</artifactId>
-			<version>1.4.1-01</version>
+			<version>2.3.1</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -124,7 +124,7 @@
 								<artifactItem>
 									<groupId>org.lucee.lib</groupId>
 									<artifactId>lucee-inst</artifactId>
-									<version>4.5.1.008</version>
+									<version>4.5.1.015</version>
 									<type>jar</type>
 									<overWrite>false</overWrite>
 									<outputDirectory>${project.build.directory}</outputDirectory>
