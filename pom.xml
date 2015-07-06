@@ -4,14 +4,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>lucee.heroku</groupId>
 	<artifactId>lucee.heroku</artifactId>
-	<version>1.0.9</version>
+	<version>1.0.10</version>
 	<name>Lucee Heroku Application Template</name>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.lucee</groupId>
 			<artifactId>lucee</artifactId>
-			<version>4.5.1.020</version>
+			<version>4.5.1.022</version>
 		</dependency>
 
 		<dependency>
@@ -30,7 +30,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.35</version>
+			<version>5.1.36</version>
 		</dependency>
 
 	</dependencies>
@@ -124,7 +124,7 @@
 								<artifactItem>
 									<groupId>org.lucee.lib</groupId>
 									<artifactId>lucee-inst</artifactId>
-									<version>4.5.1.020</version>
+									<version>4.5.1.022</version>
 									<type>jar</type>
 									<overWrite>false</overWrite>
 									<outputDirectory>${project.build.directory}</outputDirectory>
