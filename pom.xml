@@ -4,14 +4,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>lucee.heroku</groupId>
 	<artifactId>lucee.heroku</artifactId>
-	<version>1.0.13</version>
+	<version>1.0.14</version>
 	<name>Lucee Heroku Application Template</name>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.lucee</groupId>
 			<artifactId>lucee</artifactId>
-			<version>4.5.2.003</version>
+			<version>4.5.2.005</version>
 		</dependency>
 
 		<dependency>
@@ -79,9 +79,6 @@
 								<exclude>*.xml</exclude>
 								<exclude>**/lucee-server.xml</exclude>
 								<exclude>**/lucee-web.xml.cfm</exclude>
-								<exclude>lucee/library</exclude>
-								<exclude>lucee/customtags</exclude>
-								<exclude>lib/lucee-server/patches</exclude>
 							</excludes>
 							<followSymlinks>false</followSymlinks>
 						</fileset>
@@ -124,7 +121,7 @@
 								<artifactItem>
 									<groupId>org.lucee.lib</groupId>
 									<artifactId>lucee-inst</artifactId>
-									<version>4.5.2.003</version>
+									<version>4.5.2.005</version>
 									<type>jar</type>
 									<overWrite>false</overWrite>
 									<outputDirectory>${project.build.directory}</outputDirectory>
