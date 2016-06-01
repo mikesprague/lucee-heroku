@@ -22,7 +22,7 @@ This project uses the [cfmlprojects.org](http://cfmlprojects.org/artifacts/org/l
 To get started, run the following commands in GitBash (or your terminal of preference):
 
 ```bash
-$ git clone https://github.com/writecodedrinkcoffee/lucee-heroku.git
+$ git clone https://github.com/mikesprague/lucee-heroku.git
 $ cd lucee-heroku
 $ mvn package
 $ foreman start
